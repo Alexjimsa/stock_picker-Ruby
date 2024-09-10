@@ -8,7 +8,7 @@ def stock_picker(stock_prices)
   highest_profit = 0
   stock_prices.each_with_index do |buy, buy_index|
     stock_prices.each_with_index do |sell, sell_index|
-      if (sell - buy) > highest_profit
+      if (sell - buy) > highest_profit and buy_index < sell_index
         best_combination = [buy_index, sell_index]
         highest_profit = sell - buy
       end
